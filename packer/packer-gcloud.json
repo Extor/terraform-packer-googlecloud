@@ -1,0 +1,22 @@
+{
+    "variables": {
+      "project_id":"proven-sum-150906",
+      "ssh_username": "ayegorychev"
+    },
+
+    "builders": [{
+    "type": "googlecompute",
+    "account_file": "account.json",
+    "project_id": "{{user `project_id`}}",
+    "source_image": "centos-7-v20161027",
+    "zone": "asia-east1-a",
+    "ssh_pty": "true",
+    "ssh_username": "{{user `ssh_username`}}",
+    "image_description": "Image For autodeploy",
+    "image_name": "template-nginx-salt"
+  }],
+  "provisioners": [{
+    "type": "salt-masterless",
+    "local_state_tree": "./packer/salt/"
+  }]
+}
