@@ -1,3 +1,7 @@
 terraform.tfstate
 terraform.tfstate.backup
 account.json
+*.bak
+ssl_cert/*.key
+ssl_cert/*.crt
+ssl_cert/*.csr
